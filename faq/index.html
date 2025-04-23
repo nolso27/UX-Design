@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips & FAQ - Taniti Island</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../assets/navbar.js" defer></script>
+    <style>
+        .subpage-hero {
+            background-image: url('../assets/faq1.jpg');
+        }
+        
+        .subpage-hero-container {
+            justify-content: flex-end;
+            padding-right: 5%;
+        }
+        
+        .subpage-hero-content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            width: 50%;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .subpage-hero-content-box h1,
+        .subpage-hero-content-box p {
+            color: #333;
+            text-shadow: none;
+        }
+
+        .tab-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .tab.active {
+            background-color: var(--color-4);
+            color: white;
+        }
+
+        .accordion {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            background-color: #f5f5f5;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .accordion-header:hover {
+            background-color: #e9e9e9;
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: white;
+        }
+
+        .accordion.active .accordion-content {
+            padding: 15px 20px;
+            max-height: 500px;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-left">
+                <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="../attractions/index.html">Attractions</a></li>
+                <li><a href="../events/index.html">Events</a></li>
+            </ul>
+            <a href="../index.html" class="navbar-brand">Taniti</a>
+            <ul class="navbar-right">
+                <li><a href="../about/index.html">About the Island</a></li>
+                <li><a href="../faq/index.html">Tips & FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="subpage-hero-overlay"></div>
+        <div class="subpage-hero-container">
+            <div class="subpage-hero-content-box">
+                <h1>Tips & Frequently Asked Questions</h1>
+                <p>Everything you need to know about visiting Taniti</p>
+                <p>Find expert travel advice and answers to common questions to help you plan the perfect island getaway.</p>
+                
+                <div class="info-carousel">
+                    <div class="carousel-item active">
+                        <h3>Taniti Essentials</h3>
+                        <p>Our island uses the U.S. dollar, has 120V electrical outlets, and many locals speak English in tourist areas.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Getting Around</h3>
+                        <p>Explore Taniti via public buses, taxis, rental cars, or bicycles (helmets required by law).</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Safety First</h3>
+                        <p>Violent crime is rare on Taniti, but take standard precautions against petty theft in tourist areas.</p>
+                    </div>
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-index="0"></div>
+                        <div class="carousel-dot" data-index="1"></div>
+                        <div class="carousel-dot" data-index="2"></div>
+                    </div>
+                </div>
+                
+                <a href="#content-section" class="cta-btn">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="content-section" class="subpage-main-content">
+        <div class="container">
+            <div class="tab-container">
+                <div class="tab active" data-tab="travel-tips">Travel Tips</div>
+                <div class="tab" data-tab="faq">FAQs</div>
+            </div>
+            
+            <!-- Travel Tips Section -->
+            <div id="travel-tips-content" class="content-section active">
+                <div class="content-block">
+                    <h2 class="content-heading">Getting to Taniti</h2>
+                    <p class="content-text">
+                        <strong>By Air:</strong> Almost all visitors arrive to Taniti by air. Our island is served by a small airport that can accommodate small jets and propeller planes. We are currently expanding the airport so larger jets will be able to land on the island within the next few years.
+                    </p>
+                    <p class="content-text">
+                        <strong>By Sea:</strong> Some visitors arrive on a small cruise ship that docks in Yellow Leaf Bay for one night per week. If you're arriving via cruise, you'll have a day to explore our beautiful island before continuing your journey.
+                    </p>
+                </div>
+                
+                <div class="content-block">
+                    <h2 class="content-heading">Getting Around</h2>
+                    <p class="content-text">
+                        <strong>Public Transportation:</strong> Public buses serve Taniti City and run from 5 a.m. to 11 p.m. every day. Private buses serve the rest of the island. These provide an economical way to explore the island.
+                    </p>
+                    <p class="content-text">
+                        <strong>Taxis:</strong> Taxis are available in Taniti City for convenient point-to-point transportation.
+                    </p>
+                    <p class="content-text">
+                        <strong>Rental Cars:</strong> Cars can be rented from a local rental agency near the airport if you prefer to explore the island at your own pace.
+                    </p>
+                    <p class="content-text">
+                        <strong>Bicycles:</strong> Bikes and helmets are available to rent from several vendors around the island. Please note that helmets are required by law when cycling on Taniti.
+                    </p>
+                    <p class="content-text">
+                        <strong>Walking:</strong> Taniti City is fairly flat and very walkable. The area surrounding Merriton Landing is also easy to explore on foot, making these areas perfect for leisurely strolls between attractions.
+                    </p>
+                </div>
+                
+                <div class="content-block">
+                    <h2 class="content-heading">Practical Information</h2>
+                    <p class="content-text">
+                        <strong>Electricity:</strong> Power outlets on Taniti are 120 volts (the same as in the United States). Travelers from countries with different electrical systems should bring appropriate adapters.
+                    </p>
+                    <p class="content-text">
+                        <strong>Currency:</strong> Taniti uses the U.S. dollar as its currency. Many businesses will also accept euros and yen. Several banks facilitate currency exchange, and many businesses accept major credit cards.
+                    </p>
+                    <p class="content-text">
+                        <strong>Language:</strong> Many younger Tanitians speak fluent English, especially in tourist areas. Very little English is spoken in rural areas, particularly by older residents. Learning a few basic phrases in the local language is appreciated when visiting rural communities.
+                    </p>
+                    <p class="content-text">
+                        <strong>Healthcare:</strong> There is one hospital and several clinics on Taniti. The hospital has many multilingual employees to assist international visitors with their healthcare needs.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="content-heading">Safety Tips</h2>
+                    <p class="content-text">
+                        <strong>Crime:</strong> Violent crime is very rare on Taniti, but as tourism increases, there are more reports of pickpocketing and other petty crimes. We recommend standard precautions like securing valuables and being aware of your surroundings.
+                    </p>
+                    <p class="content-text">
+                        <strong>Alcohol Policies:</strong> Alcohol is not allowed to be served or sold between the hours of midnight and 9:00 a.m. The drinking age on Taniti is 18, and while the drinking age is not strictly enforced, we encourage responsible consumption.
+                    </p>
+                    <p class="content-text">
+                        <strong>Road Safety:</strong> If you're cycling, remember that helmets are required by law. When driving, be cautious on rural roads which may be narrower than what you're accustomed to.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="content-heading">Local Amenities</h2>
+                    <p class="content-text">
+                        <strong>Dining:</strong> Taniti currently has 10 restaurants: five serve mostly local fish and rice, three serve American-style meals, and two serve Pan-Asian cuisine.
+                    </p>
+                    <p class="content-text">
+                        <strong>Shopping:</strong> The island has two supermarkets, two smaller grocery stores, and one convenience store that is open 24 hours a day for your everyday needs.
+                    </p>
+                    <p class="content-text">
+                        <strong>Entertainment:</strong> Most attractions are located in or near Taniti City and the developing Merriton Landing area on the north side of Yellow Leaf Bay. Be aware that many tourist attractions and restaurants will be closed during national holidays, so plan your activities accordingly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div id="faq-content" class="content-section" style="display: none;">
+                <div class="content-block">
+                    <h2 class="content-heading">General Information</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What language is spoken on Taniti?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Many younger Tanitians speak fluent English, especially in tourist areas. Very little English is spoken in rural areas, particularly by older residents. Learning a few basic phrases in the local language is appreciated when visiting rural communities.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What currency is used on the island?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Taniti uses the U.S. dollar as its currency. Many businesses will also accept euros and yen. Several banks facilitate currency exchange, and many businesses accept major credit cards.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What are the electrical outlets like?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Power outlets on Taniti are 120 volts, the same as in the United States. Visitors from countries using different voltage systems should bring appropriate adapters and converters.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h2 class="content-heading">Travel & Transportation</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            How do I get to Taniti?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Almost all visitors arrive to Taniti by air through our small airport that can accommodate small jets and propeller planes. Some visitors arrive on a small cruise ship that docks in Yellow Leaf Bay for one night per week. We are currently expanding the airport so larger jets will be able to land on the island within the next few years.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What transportation options are available on the island?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Public buses serve Taniti City and run from 5 a.m. to 11 p.m. every day. Private buses serve the rest of the island. Taxis are available in Taniti City, and rental cars can be rented from a local rental agency near the airport. Bikes and helmets are available to rent from several vendors (helmets are required by law). Taniti City is fairly flat and very walkable, and the area surrounding Merriton Landing is easy to explore on foot.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h2 class="content-heading">Accommodation & Dining</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What types of accommodation are available?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Taniti has a wide variety of lodging that ranges from an inexpensive hostel to one large, four-star resort. There are many small, family-owned hotels and a growing number of bed and breakfasts. All types of lodging are strictly regulated and regularly inspected by the Tanitian government.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What dining options are available?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Taniti currently has 10 restaurants: five serve mostly local fish and rice, three serve American-style meals, and two serve Pan-Asian cuisine. There are also two supermarkets, two smaller grocery stores, and one convenience store that is open 24 hours a day.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            Are there alcohol restrictions?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Alcohol is not allowed to be served or sold between the hours of midnight and 9:00 a.m. The drinking age on Taniti is 18, and the drinking age is not strictly enforced.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="content-heading">Health & Safety</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What medical facilities are available?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                There is one hospital and several clinics on Taniti. The hospital has many multilingual employees to assist international visitors with their healthcare needs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            Is Taniti safe for tourists?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Violent crime is very rare on Taniti, but as tourism increases, there are more reports of pickpocketing and other petty crimes. We recommend standard precautions like securing valuables and being aware of your surroundings, particularly in crowded tourist areas.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            What should I know about national holidays?
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="content-text">
+                                Taniti enjoys a large number of national holidays, and many tourist attractions and restaurants will be closed on holidays, so visitors should plan accordingly. Check with your hotel or local tourist information center for up-to-date information about holiday closures during your visit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabs = document.querySelectorAll('.tab');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show selected content
+                    contentSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    document.getElementById(`${targetId}-content`).style.display = 'block';
+                });
+            });
+            
+            // Accordion functionality
+            const accordions = document.querySelectorAll('.accordion');
+            
+            accordions.forEach(accordion => {
+                const header = accordion.querySelector('.accordion-header');
+                
+                header.addEventListener('click', () => {
+                    accordion.classList.toggle('active');
+                });
+            });
+
+            // Carousel functionality
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('active'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Automatic carousel rotation
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }, 5000);
+            
+            // Click on dots to navigate
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    let index = parseInt(dot.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

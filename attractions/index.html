@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions - Taniti Island</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../assets/navbar.js" defer></script>
+    <style>
+        .subpage-hero {
+            background-image: url('../assets/attractions1.jpg');
+        }
+        
+        .subpage-hero-container {
+            justify-content: flex-end;
+            padding-right: 5%;
+        }
+        
+        .subpage-hero-content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            width: 50%;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .subpage-hero-content-box h1,
+        .subpage-hero-content-box p {
+            color: #333;
+            text-shadow: none;
+        }
+
+        .info-carousel {
+            margin-top: 1.5rem;
+        }
+
+        .carousel-item {
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-left">
+                <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="../attractions/index.html">Attractions</a></li>
+                <li><a href="../events/index.html">Events</a></li>
+            </ul>
+            <a href="../index.html" class="navbar-brand">Taniti</a>
+            <ul class="navbar-right">
+                <li><a href="../about/index.html">About the Island</a></li>
+                <li><a href="../faq/index.html">Tips & FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="subpage-hero-overlay"></div>
+        <div class="subpage-hero-container">
+            <div class="subpage-hero-content-box">
+                <h1>Island Attractions</h1>
+                <p>Explore the natural wonders and exciting activities on Taniti</p>
+                <p>From pristine beaches and rainforests to our active volcano, Taniti offers unforgettable experiences for every kind of adventurer.</p>
+                
+                <div class="info-carousel">
+                    <div class="carousel-item active">
+                        <h3>Natural Wonders</h3>
+                        <p>Discover our pristine beaches, lush rainforests, and safely accessible active volcano.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Water Activities</h3>
+                        <p>Enjoy snorkeling in crystal waters, chartered fishing, or boat tours around our diverse coastline.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Entertainment</h3>
+                        <p>Experience zip-lining, visit microbreweries, and explore our many entertainment venues.</p>
+                    </div>
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-index="0"></div>
+                        <div class="carousel-dot" data-index="1"></div>
+                        <div class="carousel-dot" data-index="2"></div>
+                    </div>
+                </div>
+                
+                <a href="#featured-attractions" class="cta-btn">Explore Attractions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="featured-attractions" class="subpage-main-content">
+        <div class="container">
+            <div class="content-block">
+                <h2 class="content-heading">Natural Wonders</h2>
+                <p class="content-text">
+                    Most visitors come to Taniti to experience our stunning natural landscapes. Our beautiful beaches surround Yellow Leaf Bay, offering white sands and crystal-clear waters perfect for relaxation and water activities.
+                </p>
+                <p class="content-text">
+                    The lush tropical rainforests that cover much of the island are perfect for exploration and adventure. The centerpiece of Taniti's natural attractions is our small active volcano, which offers guided tours and spectacular views of the entire island.
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="content-heading">Water Activities</h2>
+                <p class="content-text">
+                    The waters around Taniti are perfect for various aquatic activities. Snorkeling allows you to explore our vibrant underwater world, while chartered fishing tours take you to prime fishing spots around the island.
+                </p>
+                <p class="content-text">
+                    Our small but safe harbor is an excellent starting point for boat tours of the island, giving you a unique perspective of Taniti's diverse coastline from the water. Tours are available daily, weather permitting.
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="content-heading">Cultural Experiences</h2>
+                <p class="content-text">
+                    Immerse yourself in Taniti's rich cultural heritage by visiting our local history museum, which showcases the island's past and the traditions of our indigenous population.
+                </p>
+                <p class="content-text">
+                    Taniti City features traditional native architecture and is a cultural hub where you can experience the authentic island lifestyle. Take a walking tour through the city to admire the unique building styles and learn about our local customs.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h2 class="content-heading">Entertainment Options</h2>
+                <p class="content-text">
+                    Beyond our natural attractions, Taniti offers a variety of entertainment options. Experience the thrill of zip-lining through the rainforest, visit our local pubs including a microbrewery, or dance the night away at our new dance club.
+                </p>
+                <p class="content-text">
+                    Other activities include watching movies at our theater, taking helicopter rides for breathtaking aerial views, playing at our arcade, visiting art galleries, and bowling. Merriton Landing on the north side of Yellow Leaf Bay is rapidly developing and houses many of these entertainment venues.
+                </p>
+                <p class="content-text">
+                    Golf enthusiasts should note that a new nine-hole golf course is under construction and should be operational by next year.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h2 class="content-heading">Popular Tours</h2>
+                <p class="content-text">
+                    Explore Taniti conveniently with our variety of guided tours. Choose from boat tours around the island's coast, bus tours through various landmarks and scenic spots, guided hikes in the rainforest, or specialized tours to our active volcano.
+                </p>
+                <p class="content-text">
+                    These tours are led by knowledgeable local guides who provide insight into Taniti's nature, history, and culture, making for an educational and memorable experience.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('active'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Automatic carousel rotation
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }, 5000);
+            
+            // Click on dots to navigate
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    let index = parseInt(dot.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

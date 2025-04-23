@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Taniti Island</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../assets/navbar.js" defer></script>
+    <style>
+        .subpage-hero {
+            background-image: url('../assets/events1.jpg');
+        }
+        
+        .subpage-hero-container {
+            justify-content: flex-end;
+            padding-right: 5%;
+        }
+        
+        .subpage-hero-content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            width: 50%;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .subpage-hero-content-box h1,
+        .subpage-hero-content-box p {
+            color: #333;
+            text-shadow: none;
+        }
+
+        .preview-cards {
+            display: flex;
+            overflow-x: auto;
+            padding: 15px 0;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .preview-card {
+            min-width: 120px;
+            height: 80px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        .preview-card:hover, .preview-card.active {
+            transform: translateY(-5px);
+            opacity: 1;
+        }
+
+        .info-carousel {
+            margin-top: 1rem;
+        }
+
+        .carousel-item {
+            display: none;
+            text-align: left;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-left">
+                <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="../attractions/index.html">Attractions</a></li>
+                <li><a href="../events/index.html">Events</a></li>
+                <li><a href="../travel-tips/index.html">Travel Tips</a></li>
+            </ul>
+            <a href="../index.html" class="navbar-brand">Taniti</a>
+            <ul class="navbar-right">
+                <li><a href="../about/index.html">About the Island</a></li>
+                <li><a href="../faq/index.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="subpage-hero-overlay"></div>
+        <div class="subpage-hero-container">
+            <div class="subpage-hero-content-box">
+                <h1>Island Events</h1>
+                <p>Experience the vibrant culture of Taniti</p>
+                <p>Taniti enjoys a large number of national holidays and cultural events throughout the year. Plan your visit to experience our rich traditions.</p>
+                
+                <div class="info-carousel">
+                    <div class="carousel-item active">
+                        <h3>Cultural Festivals</h3>
+                        <p>Experience Taniti's rich heritage through colorful traditional celebrations held throughout the year.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Weekly Entertainment</h3>
+                        <p>Join our lively dance nights, live music performances, and community gatherings for an authentic island experience.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Special Exhibitions</h3>
+                        <p>Discover temporary art installations, cultural demonstrations, and seasonal markets featuring local artisans.</p>
+                    </div>
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-index="0"></div>
+                        <div class="carousel-dot" data-index="1"></div>
+                        <div class="carousel-dot" data-index="2"></div>
+                    </div>
+                </div>
+                
+                <a href="#upcoming-events" class="cta-btn">View Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="upcoming-events" class="subpage-main-content">
+        <div class="container">
+            <div class="content-block">
+                <h2 class="content-heading">National Holidays & Cultural Events</h2>
+                <p class="content-text">
+                    Taniti enjoys a large number of national holidays throughout the year. During these special days, many tourist attractions and restaurants will be closed as locals participate in traditional celebrations. We recommend planning your itinerary accordingly or joining in the festivities for an authentic cultural experience.
+                </p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">May 10, 2025</div>
+                            <h3 class="card-title">Taniti Heritage Day</h3>
+                            <p class="card-subtitle">Island-wide Celebration</p>
+                            <p class="card-description">An annual holiday celebrating the rich cultural heritage of Taniti. Experience traditional music, dance performances, and craft demonstrations throughout Taniti City. Local restaurants offer special menus featuring traditional island dishes.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Taniti City and surrounding areas</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>All day event</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Most tourist attractions closed</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1556035511-3168381ea4d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">July 15, 2025</div>
+                            <h3 class="card-title">Island Founders Day</h3>
+                            <p class="card-subtitle">Historical Commemoration</p>
+                            <p class="card-description">A national holiday honoring the early settlers and indigenous people of Taniti. The day features historical reenactments, storytelling sessions, and a traditional canoe parade in Yellow Leaf Bay.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Yellow Leaf Bay & Taniti History Museum</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>10:00 AM - 9:00 PM</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Limited restaurant openings</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1536746803623-cef87080bfc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">October 5, 2025</div>
+                            <h3 class="card-title">Harvest Festival</h3>
+                            <p class="card-subtitle">Agricultural Celebration</p>
+                            <p class="card-description">Celebrate Taniti's agricultural heritage with this vibrant festival featuring local produce displays, cooking demonstrations, traditional farming techniques, and festive music throughout the day.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Central Marketplace, Taniti City</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>9:00 AM - 8:00 PM</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Food stalls and tastings available</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="content-heading">Entertainment & Recreation Events</h2>
+                <p class="content-text">
+                    Taniti offers various entertainment options throughout the year. The developing area of Merriton Landing on the north side of Yellow Leaf Bay is becoming an entertainment hub where many cultural events and activities take place.
+                </p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">Every Friday Night</div>
+                            <h3 class="card-title">Live Music at Taniti Microbrewery</h3>
+                            <p class="card-subtitle">Weekly Entertainment</p>
+                            <p class="card-description">Enjoy live music performances from local and visiting musicians while sampling our island's craft beers. Different musical styles are featured each week.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Taniti Microbrewery, Merriton Landing</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>7:00 PM - 11:00 PM</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <span>No cover charge</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">View Schedule</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1559310278-18a9192d909f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">Saturdays & Wednesdays</div>
+                            <h3 class="card-title">Dance Night at Island Rhythms Club</h3>
+                            <p class="card-subtitle">Regular Event</p>
+                            <p class="card-description">Experience the energy of Taniti's newest dance club with themed nights featuring different music genres. Saturday is International Night, while Wednesday showcases traditional island rhythms.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Island Rhythms Club, Merriton Landing</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>9:00 PM - 2:00 AM</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Age 18+ (ID required)</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1464666495445-5a33228a808e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">Monthly (First Saturday)</div>
+                            <h3 class="card-title">Artisan Market</h3>
+                            <p class="card-subtitle">Monthly Event</p>
+                            <p class="card-description">Browse and purchase unique handcrafted items from local artisans including jewelry, textiles, woodwork, and art. Live demonstrations of traditional crafting techniques offered throughout the day.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Central Square, Taniti City</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>10:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Food vendors available</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="content-heading">Upcoming Development Events</h2>
+                <p class="content-text">
+                    Taniti is expanding its entertainment and recreation offerings. A nine-hole golf course is currently under construction and should be operational by next year. Stay tuned for events related to our newest developments.
+                </p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">January 15, 2026</div>
+                            <h3 class="card-title">Taniti Golf Course Grand Opening</h3>
+                            <p class="card-subtitle">Opening Celebration</p>
+                            <p class="card-description">Join us for the grand opening of Taniti's first 9-hole golf course. The event will include a ribbon-cutting ceremony, exhibition match with professional golfers, and special inaugural tournament for visitors and locals.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Taniti Golf Course (West Island)</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>10:00 AM - Ceremony, 11:30 AM - Exhibition</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Pre-registration required for tournament</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Register Interest</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1626198226928-95f880230766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <div class="event-date">June 8, 2025</div>
+                            <h3 class="card-title">Merriton Landing Development Showcase</h3>
+                            <p class="card-subtitle">Community Preview</p>
+                            <p class="card-description">Preview the exciting new entertainment venues coming to Merriton Landing. This open house event will showcase architectural plans, offer construction tours, and provide information about future venues and events.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Merriton Landing Pavilion</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>11:00 AM - 3:00 PM</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Development team present for Q&A</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <p class="content-text">
+                    Please note that dates and events may change. For the most up-to-date information about holidays and events during your stay, please check with your accommodation upon arrival or contact the Taniti Tourism Office.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Corrected navbar scroll behavior - stay fixed at top until scrolled past navbar height
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > navbarHeight) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('active'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Automatic carousel rotation
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }, 5000);
+            
+            // Click on dots to navigate
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    let index = parseInt(dot.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+            
+            // Preview card functionality
+            const previewCards = document.querySelectorAll('.preview-card');
+            
+            previewCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Remove active class from all cards
+                    previewCards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked card
+                    card.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

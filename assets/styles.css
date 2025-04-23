@@ -1,0 +1,851 @@
+/* Header font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Body font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.color-1 {
+    color: #0097a8;
+  }
+  .color-2 {
+    color: #00b3aa;
+  }
+  .color-3 {
+    color: #00d1c3;
+  }
+  .color-4 {
+    color: #a5dde9;
+  }
+  .color-5 {
+    color: #ff6d1f;
+  }
+  
+  /* CSS Variables */
+  :root {
+    --color-1: #0097a8;
+    --color-2: #00b3aa;
+    --color-3: #00d1c3;
+    --color-4: #a5dde9;
+    --color-5: #ff6d1f;
+  }
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adding subpage hero section */
+.subpage-hero {
+    height: 100vh; /* Changed from 60vh to 100vh to fill the entire viewport */
+    width: 100%;
+    position: relative;
+    background-image: url('../assets/tropical2.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 0; /* Remove margin-top to eliminate blank space */
+    padding-top: 80px; /* Add padding-top instead to account for the navbar */
+}
+
+.subpage-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.subpage-hero-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    justify-content: flex-end;
+    padding-right: 5%;
+    align-items: center; /* Center align vertically */
+}
+
+.subpage-hero-title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.subpage-hero-title h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+}
+
+.subpage-hero-title p {
+    font-size: 1.2rem;
+    max-width: 80%;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.subpage-hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center align the content horizontally */
+    padding: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.subpage-hero-content-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    color: #333;
+    width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+}
+
+.subpage-hero-content-box h1,
+.subpage-hero-content-box p {
+    color: #333;
+    text-shadow: none;
+    width: 100%; /* Allow text to take full width */
+}
+
+.subpage-hero-content p {
+    margin-bottom: 2.5rem; /* Increased spacing between text and button */
+    text-align: center; /* Center align the text */
+}
+
+.subpage-main-content {
+    padding: 3rem 0;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero slider */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Navigation */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    background-color: transparent;
+    transition: top 0.4s ease; /* Add transition for top */
+}
+
+nav.scrolled {
+    position: fixed;
+    top: -70px; /* Start offscreen */
+    background: white;
+    transition: background-color 0.5s ease;
+}
+
+nav.scrolled .navbar-left a, 
+nav.scrolled .navbar-right a,
+nav.scrolled .navbar-brand {
+    color: #333; /* Dark text color when scrolled */
+    text-shadow: none;
+}
+
+nav.scrolled.visible {
+    top: 0;
+    transition: top 0.4s ease;
+}
+
+nav.unscrolled {
+    position: fixed; /* Keep as fixed during transition */
+    top: -70px;
+    background: white;
+    transition: top 0.4s ease; /* Add transition for top */
+}
+
+nav.unscrolled .navbar-left a,
+nav.unscrolled .navbar-right a,
+nav.unscrolled .navbar-brand {
+    color: #333; /* Dark text color when unscrolled */
+    text-shadow: none;
+}
+
+/* Remove the hover background effect */
+.navbar:hover::before {
+    display: none;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.navbar-left {
+    display: flex;
+    list-style: none;
+    padding-left: 2rem;
+}
+
+.navbar-right {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    padding-right: 2rem;
+}
+
+.navbar-left li, .navbar-right li {
+    margin-right: 1.5rem;
+}
+
+.navbar-right li:last-child {
+    margin-right: 0;
+}
+
+.navbar-left a, .navbar-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-left a:hover, .navbar-right a:hover {
+    color: var(--color-4);
+    transform: scale(1.1);
+}
+
+/* Call to action button */
+.cta-btn {
+    display: inline-block;
+    background-color: var(--color-4);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 151, 168, 0.4);
+    font-family: 'Montserrat', sans-serif;
+    width: auto; /* Auto width instead of stretching */
+    max-width: 250px; /* Maximum width for buttons */
+    text-align: center; /* Ensure text is centered inside button */
+    margin-top: 1.5rem; /* Add space above button */
+    align-self: center; /* Center the button */
+}
+
+/* Reviews section */
+.reviews-bar {
+    background-color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reviews-logo {
+    margin-right: 1rem;
+    color: var(--color-2);
+    font-size: 2rem;
+}
+
+.stars {
+    color: var(--color-2);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.reviews-count {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Content sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section.page-content {
+    margin-top: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-5);
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* About Page Styles */
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-heading {
+    color: var(--color-5);
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.content-text {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Features section */
+.features {
+    background-color: var(--color-3);
+    padding: 5rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--color-1);
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-5);
+    font-weight: 600;
+}
+
+.feature-desc {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Promotion section */
+.promotion {
+    background-color: white;
+    padding: 5rem 0;
+}
+
+.promotion-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.promotion-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.promotion-text {
+    flex: 1;
+}
+
+.promotion-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-5);
+    font-weight: 600;
+}
+
+.promotion-desc {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Card styles for hotels and events */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    justify-items: center; /* Center aligns cards in their grid cell */
+}
+
+/* If only one or two cards in a row, center them */
+@media (min-width: 992px) {
+    .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center alignment for cards */
+    }
+    
+    .card {
+        flex: 0 0 auto; /* Don't grow or shrink */
+        margin: 1rem; /* Add margin around cards */
+        width: calc(33.333% - 2rem); /* Set width for 3 cards per row with margin */
+        max-width: 380px; /* Maximum width for each card */
+    }
+    
+    /* Ensure no more than 3 cards per row */
+    .content-block .card-grid:has(.card:nth-child(4)) .card {
+        width: calc(33.333% - 2rem);
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensures cards take full width on smaller screens */
+    max-width: 380px; /* Maximum width for each card */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    background-color: var(--color-4);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-5);
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    margin-bottom: 1.5rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.card-details {
+    margin-bottom: 1rem;
+}
+
+.card-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.card-detail i {
+    color: var(--color-1);
+    margin-right: 0.5rem;
+}
+
+.card-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-rating i {
+    color: #ffc107;
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: var(--color-4);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center; /* Ensure text is centered inside button */
+    width: auto; /* Make button only as wide as needed */
+    min-width: 120px; /* Minimum button width for consistency */
+}
+
+.card-button:hover {
+    background-color: var(--color-2);
+    transform: translateY(-2px);
+}
+
+.event-date {
+    background-color: var(--color-1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+}
+
+/* Page background and content layout */
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+.page-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/tropical2.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.page-content-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    height: calc(100vh - 80px);
+    position: relative;
+}
+
+.page-title-container {
+    flex: 1;
+    padding: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    max-width: 80%;
+}
+
+.page-content {
+    flex: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
+.page-full-content {
+    width: 100%;
+    background-color: white;
+    padding: 3rem 2rem;
+    margin-top: calc(100vh - 80px);
+    position: relative;
+    z-index: 2;
+}
+
+/* Carousel styles for hero sections */
+.info-carousel {
+    width: 100%;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.carousel-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item h3 {
+    font-size: 1.1rem;
+    color: var(--color-1);
+    margin-bottom: 0.5rem;
+}
+
+.carousel-item p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--color-4);
+}
+
+/* Tab selector positioning - move from hero to content */
+.tab-container {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .navbar-brand {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar-left, .navbar-right {
+        margin: 10px 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .page-content-container {
+        flex-direction: column;
+    }
+    
+    .page-title-container,
+    .page-content {
+        flex: 1 0 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .promotion-content {
+        flex-direction: column;
+    }
+    
+    .navbar-container {
+        flex-direction: column;
+    }
+    
+    .navbar-left, .navbar-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    
+    .navbar-left li, .navbar-right li {
+        margin: 5px 10px;
+    }
+}

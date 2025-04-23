@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniti - Your Dream Island Getaway</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="assets/navbar.js" defer></script>
+    <style>
+        .hero-slide:nth-child(1) {
+            background-image: url('assets/tropical1.jpg');
+        }
+        .hero-slide:nth-child(2) {
+            background-image: url('assets/tropical2.jpg');
+        }
+        .hero-slide:nth-child(3) {
+            background-image: url('assets/tropical3.jpg');
+        }
+        
+        .content-container {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 50%;
+            text-align: left;
+            color: white;
+            z-index: 4;
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-left">
+                <li><a href="hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="attractions/index.html">Attractions</a></li>
+                <li><a href="events/index.html">Events</a></li>
+            </ul>
+            <a href="index.html" class="navbar-brand">Taniti</a>
+            <ul class="navbar-right">
+                <li><a href="about/index.html">About the Island</a></li>
+                <li><a href="faq/index.html">Tips & FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="content-container">
+            <div class="content-box">
+                <h1>Welcome to Taniti</h1>
+                <p>Discover the untouched paradise in the Pacific</p>
+                <a href="hotels-stays/index.html" class="cta-btn">Plan Your Trip</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Bar -->
+    <div class="reviews-bar">
+        <div class="reviews-container">
+            <div class="reviews-logo">
+                <i class="fab fa-tripadvisor"></i>
+            </div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="reviews-count">
+                4.5/5 based on 17,302 reviews
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Tropical Paradise?</h2>
+            <p class="section-subtitle">Discover what makes our island the perfect destination for your next vacation</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="feature-title">Pristine Beaches</h3>
+                    <p class="feature-desc">Miles of untouched white sand beaches and crystal-clear turquoise waters await you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <h3 class="feature-title">Luxury Resorts</h3>
+                    <p class="feature-desc">World-class accommodations with breathtaking views and exceptional service.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3 class="feature-title">Adventures</h3>
+                    <p class="feature-desc">From hiking tropical forests to snorkeling coral reefs, adventure awaits at every turn.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="feature-title">Culinary Delights</h3>
+                    <p class="feature-desc">Experience our unique fusion cuisine with fresh local ingredients and exotic flavors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotion Section -->
+    <section class="promotion section">
+        <div class="container">
+            <div class="promotion-content">
+                <div class="promotion-image">
+                    <img src="assets/tropical3.jpg" alt="Special offer">
+                </div>
+                <div class="promotion-text">
+                    <h3 class="promotion-title">Special Summer Offer</h3>
+                    <p class="promotion-desc">Book your stay before June 30th and enjoy 20% off on all accommodation, plus a complimentary sunset cruise for two. Our exclusive packages include airport transfers, daily breakfast, and special access to our spa facilities.</p>
+                    <a href="hotels-stays/index.html" class="cta-btn">View Offers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

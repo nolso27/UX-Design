@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels & Stays - Taniti Island</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../assets/navbar.js" defer></script>
+    <style>
+        .subpage-hero {
+            background-image: url('../assets/hotel1.jpg');
+        }
+        
+        .subpage-hero-container {
+            justify-content: flex-end;
+            padding-right: 5%;
+        }
+        
+        .subpage-hero-content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            width: 50%;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .subpage-hero-content-box h1,
+        .subpage-hero-content-box p {
+            color: #333;
+            text-shadow: none;
+        }
+
+        .info-carousel {
+            position: relative;
+            margin-top: 1rem;
+        }
+
+        .carousel-item {
+            display: none;
+            text-align: center;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            background-color: #333;
+        }
+
+        .preview-cards {
+            display: flex;
+            overflow-x: auto;
+            padding: 15px 0;
+            gap: 15px;
+            margin-bottom: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .preview-card {
+            min-width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        .preview-card:hover, .preview-card.active {
+            transform: translateY(-5px);
+            opacity: 1;
+        }
+
+        .preview-card .card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 5px;
+            font-size: 0.8rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-left">
+                <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="../attractions/index.html">Attractions</a></li>
+                <li><a href="../events/index.html">Events</a></li>
+            </ul>
+            <a href="../index.html" class="navbar-brand">Taniti</a>
+            <ul class="navbar-right">
+                <li><a href="../about/index.html">About the Island</a></li>
+                <li><a href="../faq/index.html">Tips & FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="subpage-hero-overlay"></div>
+        <div class="subpage-hero-container">
+            <div class="subpage-hero-content-box">
+                <h1>Accommodations</h1>
+                <p>Find your perfect island retreat on Taniti</p>
+                <p>From our luxury four-star resort to charming bed and breakfasts, discover a range of quality accommodations to suit your dream vacation.</p>
+                
+                <div class="info-carousel">
+                    <div class="carousel-item active">
+                        <h3>Luxury Resort</h3>
+                        <p>Experience our premier four-star resort with ocean views, multiple restaurants, infinity pools, and a full-service spa.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Family Hotels</h3>
+                        <p>Discover family-run accommodations offering personalized service and authentic Tanitian hospitality.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Cozy B&Bs</h3>
+                        <p>Stay in intimate bed & breakfasts with home-cooked meals and local hosts who know the island's best-kept secrets.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Budget Options</h3>
+                        <p>Find affordable stays at our hostel with both dormitory-style and private rooms for budget-conscious travelers.</p>
+                    </div>
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-index="0"></div>
+                        <div class="carousel-dot" data-index="1"></div>
+                        <div class="carousel-dot" data-index="2"></div>
+                        <div class="carousel-dot" data-index="3"></div>
+                    </div>
+                </div>
+                
+                <a href="#featured-stays" class="cta-btn">Browse Accommodations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="featured-stays" class="subpage-main-content">
+        <div class="container">
+            <div class="content-block">
+                <h2 class="content-heading">Quality Accommodations</h2>
+                <p class="content-text">
+                    Taniti offers a wide variety of lodging options to suit every preference and budget. All accommodations on our island are strictly regulated and regularly inspected by the Tanitian government to ensure high standards of quality, cleanliness, and safety.
+                </p>
+            </div>
+            
+            <div class="content-block" id="luxury">
+                <h2 class="content-heading">Luxury Resort</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Taniti Royal Resort & Spa</h3>
+                            <p class="card-subtitle">Premium Four-Star Beachfront Resort</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.7/5 (423 reviews)</span>
+                            </div>
+                            <p class="card-description">Our premier luxury resort featuring 120 rooms and suites with ocean views, multiple restaurants, infinity pools, a full-service spa, and direct beach access.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Yellow Leaf Bay, Taniti City</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <span>3 Pools, Spa, 2 Restaurants</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi, Fitness Center</span>
+                                </div>
+                            </div>
+                            <a href="https://www.booking.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block" id="family-owned">
+                <h2 class="content-heading">Family-Owned Hotels</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Oceanic View Hotel</h3>
+                            <p class="card-subtitle">Charming Family-Run Beachside Hotel</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.3/5 (186 reviews)</span>
+                            </div>
+                            <p class="card-description">A charming 28-room hotel run by the Malani family for three generations, offering personalized service and authentic Tanitian hospitality just steps from the beach.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>North Shore Drive, Taniti City</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Restaurant with Local Cuisine</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi, Beach Equipment Rental</span>
+                                </div>
+                            </div>
+                            <a href="https://www.airbnb.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Palm Garden Hotel</h3>
+                            <p class="card-subtitle">Traditional Island-Style Lodging</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.1/5 (152 reviews)</span>
+                            </div>
+                            <p class="card-description">This 15-room hotel features traditional Tanitian architecture and is surrounded by lush tropical gardens, offering a peaceful retreat within walking distance of Taniti City.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Garden Lane, Taniti City</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Complimentary Breakfast</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi, Garden Terrace</span>
+                                </div>
+                            </div>
+                            <a href="https://www.hotels.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Merriton Harbor Inn</h3>
+                            <p class="card-subtitle">Vibrant Hotel in Entertainment District</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.5/5 (208 reviews)</span>
+                            </div>
+                            <p class="card-description">A modern 35-room hotel located in the heart of Merriton Landing, Taniti's developing entertainment district, perfect for travelers who want to be close to restaurants and activities.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Merriton Landing, North Yellow Leaf Bay</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-cocktail"></i>
+                                    <span>Rooftop Bar & Lounge</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi, 24-Hour Reception</span>
+                                </div>
+                            </div>
+                            <a href="https://www.expedia.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block" id="bnb">
+                <h2 class="content-heading">Bed & Breakfasts</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1590856029620-9f5cf2b1ab3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Seabreeze B&B</h3>
+                            <p class="card-subtitle">Cozy Oceanfront Bed & Breakfast</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.8/5 (97 reviews)</span>
+                            </div>
+                            <p class="card-description">A charming 6-room bed & breakfast in a restored historic building with panoramic ocean views and home-cooked breakfasts featuring local ingredients.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Coastal Road, Yellow Leaf Bay</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Gourmet Breakfast Included</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                    <span>Private Beach Access</span>
+                                </div>
+                            </div>
+                            <a href="https://www.airbnb.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1521783988139-89397d761dce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Rainforest Retreat B&B</h3>
+                            <p class="card-subtitle">Secluded Jungle Getaway</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.9/5 (82 reviews)</span>
+                            </div>
+                            <p class="card-description">An intimate 4-room B&B nestled in the rainforest with stunning views of Taniti's interior mountain range and the active volcano. Perfect for nature lovers.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Mountain View Road, Rainforest Area</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Organic Breakfast Included</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-hiking"></i>
+                                    <span>Guided Nature Walks Available</span>
+                                </div>
+                            </div>
+                            <a href="https://www.booking.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block" id="budget">
+                <h2 class="content-heading">Budget-Friendly Options</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Taniti Backpackers Hostel</h3>
+                            <p class="card-subtitle">Affordable & Social Accommodation</p>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span style="margin-left: 0.5rem; color: #666;">4.2/5 (216 reviews)</span>
+                            </div>
+                            <p class="card-description">Taniti's only hostel offers both dormitory-style rooms and private options. Features include a communal kitchen, social lounge, and regular activities for guests.</p>
+                            <div class="card-details">
+                                <div class="card-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Harbor Street, Taniti City</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>Shared & Private Rooms</span>
+                                </div>
+                                <div class="card-detail">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi, Communal Kitchen</span>
+                                </div>
+                            </div>
+                            <a href="https://www.hostelworld.com" target="_blank" class="card-button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Corrected navbar scroll behavior - stay fixed at top until scrolled past navbar height
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > navbarHeight) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality for info cards
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('active'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Automatic carousel rotation
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }, 5000);
+            
+            // Click on dots to navigate
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    let index = parseInt(dot.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+            
+            // Existing preview cards functionality
+            const previewCards = document.querySelectorAll('.preview-card');
+            
+            previewCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Remove active class from all cards
+                    previewCards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked card
+                    card.classList.add('active');
+                    
+                    // Get the target section
+                    const targetId = card.getAttribute('data-target');
+                    
+                    // Scroll to the target section
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({behavior: 'smooth'});
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

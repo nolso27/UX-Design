@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Taniti - Discover Our Island</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../assets/navbar.js" defer></script>
+    <style>
+        .subpage-hero {
+            background-image: url('../assets/about1.jpg');
+        }
+        
+        .subpage-hero-container {
+            justify-content: flex-end;
+            padding-right: 5%;
+        }
+        
+        .subpage-hero-content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            width: 50%;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .subpage-hero-content-box h1,
+        .subpage-hero-content-box p {
+            color: #333;
+            text-shadow: none;
+        }
+
+        .info-carousel {
+            margin-top: 1.5rem;
+        }
+
+        .carousel-item {
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-left">
+                <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="../attractions/index.html">Attractions</a></li>
+                <li><a href="../events/index.html">Events</a></li>
+            </ul>
+            <a href="../index.html" class="navbar-brand">Taniti</a>
+            <ul class="navbar-right">
+                <li><a href="../about/index.html">About the Island</a></li>
+                <li><a href="../faq/index.html">Tips & FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="subpage-hero-overlay"></div>
+        <div class="subpage-hero-container">
+            <div class="subpage-hero-content-box">
+                <h1>About Our Island</h1>
+                <p>Discover the natural beauty and culture of Taniti</p>
+                <p>A small tropical paradise in the Pacific with pristine beaches, lush rainforests, and a rich indigenous culture.</p>
+                
+                <div class="info-carousel">
+                    <div class="carousel-item active">
+                        <h3>Island Facts</h3>
+                        <p>Taniti spans less than 500 square miles but offers diverse terrain from sandy beaches to an active volcano.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Local Culture</h3>
+                        <p>Our indigenous population of 20,000 people maintains rich cultural traditions while embracing sustainable tourism.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Island Economy</h3>
+                        <p>Traditionally centered on fishing and agriculture, our economy is now diversifying with growing tourism opportunities.</p>
+                    </div>
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-index="0"></div>
+                        <div class="carousel-dot" data-index="1"></div>
+                        <div class="carousel-dot" data-index="2"></div>
+                    </div>
+                </div>
+                
+                <a href="#content" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="content" class="subpage-main-content">
+        <div class="container">
+            <div class="content-block">
+                <h2 class="content-heading">Our Island</h2>
+                <p class="content-text">
+                    Taniti is a small, tropical island in the Pacific. With an area of less than 500 square miles, our island offers remarkably diverse terrain including both sandy and rocky beaches, a small but safe harbor, lush tropical rainforests, and a mountainous interior that includes a small, active volcano.
+                </p>
+                <p class="content-text">
+                    Our island is home to an indigenous population of about 20,000 people. Until a recent increase in tourism, the Tanitian economy was dominated by fishing and agriculture, which remain important parts of our island's heritage and culture.
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="content-heading">Geography & Terrain</h2>
+                <p class="content-text">
+                    Despite its small size, Taniti's geography is remarkably diverse. Our coastline features both pristine white sandy beaches that surround Yellow Leaf Bay, as well as dramatic rocky shores. The interior of the island is dominated by lush tropical rainforests that are home to diverse plant and animal species.
+                </p>
+                <p class="content-text">
+                    The mountainous center of Taniti includes our active volcano, which is safely accessible to visitors and offers spectacular views of the island and surrounding ocean. Taniti City is located on the shores of Yellow Leaf Bay, featuring traditional native architecture and serving as the island's main hub.
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="content-heading">Culture & People</h2>
+                <p class="content-text">
+                    The people of Taniti have a rich cultural heritage, with many younger Tanitians speaking fluent English, especially in areas frequently visited by tourists. In rural areas, particularly among older residents, very little English is spoken, offering visitors an authentic cultural experience.
+                </p>
+                <p class="content-text">
+                    Taniti enjoys numerous national holidays throughout the year, when locals celebrate their cultural traditions. Many tourist attractions and restaurants close during these holidays, giving visitors the opportunity to observe or participate in local festivities.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h2 class="content-heading">Economy</h2>
+                <p class="content-text">
+                    While traditionally centered around fishing and agriculture, Taniti's economy has been diversifying with the growth of tourism. The island is seeing development particularly in the Merriton Landing area on the north side of Yellow Leaf Bay, which is rapidly expanding with entertainment venues and tourist facilities.
+                </p>
+                <p class="content-text">
+                    The U.S. dollar serves as Taniti's currency, though many businesses also accept euros and yen. Several banks across the island facilitate currency exchange, and most businesses in tourist areas accept major credit cards.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality for info cards
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('active'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Automatic carousel rotation
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }, 5000);
+            
+            // Click on dots to navigate
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    let index = parseInt(dot.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
