@@ -343,6 +343,12 @@ nav.unscrolled .navbar-brand {
     align-self: center; /* Center the button */
 }
 
+.cta-btn:hover {
+    background-color: var(--color-2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 151, 168, 0.5);
+}
+
 /* Reviews section */
 .reviews-bar {
     background-color: white;
@@ -534,18 +540,31 @@ nav.unscrolled .navbar-brand {
         display: flex;
         flex-wrap: wrap;
         justify-content: center; /* Center alignment for cards */
+        max-width: 1200px; /* Maximum width for the container */
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .card {
         flex: 0 0 auto; /* Don't grow or shrink */
-        margin: 1rem; /* Add margin around cards */
         width: calc(33.333% - 2rem); /* Set width for 3 cards per row with margin */
         max-width: 380px; /* Maximum width for each card */
     }
     
-    /* Ensure no more than 3 cards per row */
-    .content-block .card-grid:has(.card:nth-child(4)) .card {
-        width: calc(33.333% - 2rem);
+    /* Force cards to wrap after every 3 cards */
+    .card:nth-child(3n) {
+        break-after: always; /* Force a break after every third card */
+    }
+    
+    /* For very large screens, limit to 3 cards per row maximum */
+    @media (min-width: 1400px) {
+        .card-grid {
+            justify-content: space-around; /* More space between cards on large screens */
+        }
+        
+        .card {
+            flex-basis: calc(33.333% - 2rem); /* Maintain 3 cards per row */
+        }
     }
 }
 
@@ -737,6 +756,9 @@ nav.unscrolled .navbar-brand {
     width: 100%;
     margin: 1.5rem 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center carousel items horizontally */
 }
 
 .carousel-item {
@@ -746,26 +768,37 @@ nav.unscrolled .navbar-brand {
     margin-bottom: 1rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     display: none;
+    text-align: center; /* Center text inside carousel items */
+    max-width: 380px;
+    margin-left: auto; /* Center the item itself */
+    margin-right: auto; /* Center the item itself */
 }
 
 .carousel-item.active {
     display: block;
+     /* Set a maximum width for the carousel item */
 }
 
 .carousel-item h3 {
     font-size: 1.1rem;
     color: var(--color-1);
     margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .carousel-item p {
     font-size: 0.95rem;
     margin: 0;
+    color: #444;
+    text-shadow: none; /* Remove any text shadow */
+    margin-bottom: 0.5rem;
 }
 
 .carousel-dots {
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
 
@@ -789,7 +822,6 @@ nav.unscrolled .navbar-brand {
     margin-bottom: 20px;
     justify-content: center;
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 10px;
 }
 
 /* Responsive styles */

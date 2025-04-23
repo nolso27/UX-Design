@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - Taniti Island</title>
     <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/carousel-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="../assets/navbar.js" defer></script>
+    <script src="../assets/carousel.js" defer></script>
     <style>
         .subpage-hero {
             background-image: url('../assets/events1.jpg');
@@ -32,64 +34,6 @@
         .subpage-hero-content-box p {
             color: #333;
             text-shadow: none;
-        }
-
-        .preview-cards {
-            display: flex;
-            overflow-x: auto;
-            padding: 15px 0;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .preview-card {
-            min-width: 120px;
-            height: 80px;
-            border-radius: 10px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            opacity: 0.7;
-            flex-shrink: 0;
-        }
-
-        .preview-card:hover, .preview-card.active {
-            transform: translateY(-5px);
-            opacity: 1;
-        }
-
-        .info-carousel {
-            margin-top: 1rem;
-        }
-
-        .carousel-item {
-            display: none;
-            text-align: left;
-        }
-
-        .carousel-item.active {
-            display: block;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #ccc;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        .carousel-dot.active {
-            background-color: #333;
         }
     </style>
 </head>
@@ -117,21 +61,28 @@
         <div class="subpage-hero-container">
             <div class="subpage-hero-content-box">
                 <h1>Island Events</h1>
-                <p>Experience the vibrant culture of Taniti</p>
-                <p>Taniti enjoys a large number of national holidays and cultural events throughout the year. Plan your visit to experience our rich traditions.</p>
                 
                 <div class="info-carousel">
                     <div class="carousel-item active">
-                        <h3>Cultural Festivals</h3>
-                        <p>Experience Taniti's rich heritage through colorful traditional celebrations held throughout the year.</p>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <h3 class="card-title">Taniti Heritage Day</h3>
+                        <p class="card-subtitle">May 10, 2025</p>
+                        <p class="card-description">An annual holiday celebrating the rich cultural heritage of Taniti with traditional music, dance performances, and craft demonstrations.</p>
+                        <a href="#upcoming-events" class="card-button">Learn More</a>
                     </div>
                     <div class="carousel-item">
-                        <h3>Weekly Entertainment</h3>
-                        <p>Join our lively dance nights, live music performances, and community gatherings for an authentic island experience.</p>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <h3 class="card-title">Live Music at Taniti Microbrewery</h3>
+                        <p class="card-subtitle">Every Friday Night</p>
+                        <p class="card-description">Enjoy live music performances from local and visiting musicians while sampling our island's craft beers.</p>
+                        <a href="#upcoming-events" class="card-button">View Schedule</a>
                     </div>
                     <div class="carousel-item">
-                        <h3>Special Exhibitions</h3>
-                        <p>Discover temporary art installations, cultural demonstrations, and seasonal markets featuring local artisans.</p>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <h3 class="card-title">Taniti Golf Course Opening</h3>
+                        <p class="card-subtitle">January 15, 2026</p>
+                        <p class="card-description">Join us for the grand opening of Taniti's first 9-hole golf course with an exhibition match and inaugural tournament.</p>
+                        <a href="#upcoming-events" class="card-button">Register Interest</a>
                     </div>
                     <div class="carousel-dots">
                         <div class="carousel-dot active" data-index="0"></div>
@@ -382,62 +333,5 @@
             </div>
         </div>
     </section>
-
-    <script>
-        // Corrected navbar scroll behavior - stay fixed at top until scrolled past navbar height
-        const navbar = document.querySelector('.navbar');
-        const navbarHeight = navbar.offsetHeight;
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > navbarHeight) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Carousel functionality
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            const carouselDots = document.querySelectorAll('.carousel-dot');
-            let currentIndex = 0;
-            
-            function showSlide(index) {
-                carouselItems.forEach(item => item.classList.remove('active'));
-                carouselDots.forEach(dot => dot.classList.remove('active'));
-                
-                carouselItems[index].classList.add('active');
-                carouselDots[index].classList.add('active');
-                currentIndex = index;
-            }
-            
-            // Automatic carousel rotation
-            setInterval(() => {
-                let nextIndex = (currentIndex + 1) % carouselItems.length;
-                showSlide(nextIndex);
-            }, 5000);
-            
-            // Click on dots to navigate
-            carouselDots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    let index = parseInt(dot.getAttribute('data-index'));
-                    showSlide(index);
-                });
-            });
-            
-            // Preview card functionality
-            const previewCards = document.querySelectorAll('.preview-card');
-            
-            previewCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    // Remove active class from all cards
-                    previewCards.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked card
-                    card.classList.add('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,0 +1,254 @@
+/* CSS-only Carousel Implementation */
+
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+.carousel {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  perspective: 100px;
+}
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  counter-increment: item;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel__slide:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+.carousel__navigation {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-clip: content-box;
+  border: 0.2rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel__navigation-button:hover {
+  transform: scale(1.2);
+}
+
+/* Overlay for text content */
+.carousel__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+/* Add a dark overlay for better text visibility */
+.carousel__slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Subpage carousel specific styles */
+.subpage-carousel {
+  padding-top: 0;
+  height: auto;
+  min-height: 250px;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.subpage-carousel .carousel__viewport {
+  height: 100%;
+  min-height: 250px;
+}
+
+.subpage-carousel .carousel__slide {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.subpage-carousel .carousel__slide::after {
+  background: none;
+}
+
+.subpage-carousel .carousel__slide::before {
+  display: none;
+}
+
+.subpage-carousel .carousel__navigation {
+  bottom: -1.5rem;
+}
+
+.subpage-carousel .carousel__navigation-button {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #ccc;
+  margin: 0 0.3rem;
+  border-width: 0.15rem;
+}
+
+.subpage-carousel .carousel__navigation-button:hover {
+  background-color: #333;
+}
+
+/* For card-style content in carousel slide */
+.carousel__slide-content {
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.carousel__slide-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-1);
+}
+
+.carousel__slide-text {
+  font-size: 0.95rem;
+  margin: 0;
+}
