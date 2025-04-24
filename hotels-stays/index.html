@@ -6,26 +6,23 @@
     <title>Hotels & Stays - Taniti Island</title>
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/carousel-styles.css">
+    <link rel="stylesheet" href="../assets/page-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="../assets/navbar.js" defer></script>
     <script src="../assets/carousel.js" defer></script>
-    <style>
-        .subpage-hero {
-            background-image: url('../assets/hotel1.jpg');
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
             <ul class="navbar-left">
-                <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
+                <li><a href="../hotels-stays/index.html" class="active">Hotels & Stays</a></li>
                 <li><a href="../attractions/index.html">Attractions</a></li>
                 <li><a href="../events/index.html">Events</a></li>
             </ul>
             <a href="../index.html" class="navbar-brand">Taniti</a>
             <ul class="navbar-right">
+                <li><a href="../cuisine/index.html">Cuisine</a></li>
                 <li><a href="../about/index.html">About the Island</a></li>
                 <li><a href="../faq/index.html">Tips & FAQ</a></li>
             </ul>
@@ -33,11 +30,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="subpage-hero">
+    <section class="subpage-hero hotels-hero">
         <div class="subpage-hero-overlay"></div>
         <div class="subpage-hero-container">
+            <div class="subpage-hero-title">
+                <h1>Accommodations</h1>
+                <p>Find your perfect stay on our tropical island</p>
+                <p>From luxury resorts to charming family-run hotels and cozy bed & breakfasts, Taniti offers quality accommodations for every preference and budget.</p>
+            </div>
             <div class="subpage-hero-content-box">
-                <h1>Accommodations</h1>                
                 <div class="info-carousel">
                     <div class="carousel-item active">
                         <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
@@ -70,7 +71,37 @@
                         <a href="https://www.airbnb.com" target="_blank" class="card-button">Book Now</a>
                     </div>
                     <div class="carousel-item">
-                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1590856029620-9f5cf2b1ab3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <h3 class="card-title">Palm Garden Hotel</h3>
+                        <p class="card-subtitle">Traditional Island-Style Lodging</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span style="margin-left: 0.5rem; color: #666;">4.1/5 (152 reviews)</span>
+                        </div>
+                        <p class="card-description">This 15-room hotel features traditional Tanitian architecture and is surrounded by lush tropical gardens.</p>
+                        <a href="https://www.hotels.com" target="_blank" class="card-button">Book Now</a>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <h3 class="card-title">Merriton Harbor Inn</h3>
+                        <p class="card-subtitle">Vibrant Hotel in Entertainment District</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span style="margin-left: 0.5rem; color: #666;">4.5/5 (208 reviews)</span>
+                        </div>
+                        <p class="card-description">A modern 35-room hotel located in the heart of Merriton Landing entertainment district.</p>
+                        <a href="https://www.expedia.com" target="_blank" class="card-button">Book Now</a>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1647886074240-fa0d5ce4512f?q=80&w=2074&auto=format&fit=crop&w=1080&q=80');"></div>
                         <h3 class="card-title">Seabreeze B&B</h3>
                         <p class="card-subtitle">Cozy Oceanfront Bed & Breakfast</p>
                         <div class="card-rating">
@@ -81,8 +112,23 @@
                             <i class="fas fa-star-half-alt"></i>
                             <span style="margin-left: 0.5rem; color: #666;">4.8/5 (97 reviews)</span>
                         </div>
-                        <p class="card-description">A charming 6-room bed & breakfast in a restored historic building with panoramic ocean views and home-cooked breakfasts.</p>
+                        <p class="card-description">A charming 6-room bed & breakfast in a restored historic building with panoramic ocean views.</p>
                         <a href="https://www.airbnb.com" target="_blank" class="card-button">Book Now</a>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1521783988139-89397d761dce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <h3 class="card-title">Rainforest Retreat B&B</h3>
+                        <p class="card-subtitle">Secluded Jungle Getaway</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="margin-left: 0.5rem; color: #666;">4.9/5 (82 reviews)</span>
+                        </div>
+                        <p class="card-description">An intimate 4-room B&B nestled in the rainforest with stunning views of the mountains and volcano.</p>
+                        <a href="https://www.booking.com" target="_blank" class="card-button">Book Now</a>
                     </div>
                     <div class="carousel-item">
                         <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
@@ -96,7 +142,7 @@
                             <i class="far fa-star"></i>
                             <span style="margin-left: 0.5rem; color: #666;">4.2/5 (216 reviews)</span>
                         </div>
-                        <p class="card-description">Taniti's only hostel offers both dormitory-style rooms and private options with a communal kitchen and social lounge.</p>
+                        <p class="card-description">Taniti's only hostel offers both dormitory-style rooms and private options with a communal kitchen.</p>
                         <a href="https://www.hostelworld.com" target="_blank" class="card-button">Book Now</a>
                     </div>
                     <div class="carousel-dots">
@@ -104,6 +150,9 @@
                         <div class="carousel-dot" data-index="1"></div>
                         <div class="carousel-dot" data-index="2"></div>
                         <div class="carousel-dot" data-index="3"></div>
+                        <div class="carousel-dot" data-index="4"></div>
+                        <div class="carousel-dot" data-index="5"></div>
+                        <div class="carousel-dot" data-index="6"></div>
                     </div>
                 </div>
                 
@@ -264,7 +313,7 @@
                 <h2 class="content-heading">Bed & Breakfasts</h2>
                 <div class="card-grid">
                     <div class="card">
-                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1590856029620-9f5cf2b1ab3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1647886074240-fa0d5ce4512f?q=80&w=2074&auto=format&fit=crop&w=1080&q=80');"></div>
                         <div class="card-content">
                             <h3 class="card-title">Seabreeze B&B</h3>
                             <p class="card-subtitle">Cozy Oceanfront Bed & Breakfast</p>

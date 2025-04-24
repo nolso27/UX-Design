@@ -9,33 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="../assets/navbar.js" defer></script>
     <script src="../assets/carousel.js" defer></script>
-    <style>
-        .subpage-hero {
-            background-image: url('../assets/events1.jpg');
-        }
-        
-        .subpage-hero-container {
-            justify-content: flex-end;
-            padding-right: 5%;
-        }
-        
-        .subpage-hero-content-box {
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            color: #333;
-            width: 50%;
-            margin-top: 2rem;
-            text-align: left;
-        }
-        
-        .subpage-hero-content-box h1,
-        .subpage-hero-content-box p {
-            color: #333;
-            text-shadow: none;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -44,24 +17,27 @@
             <ul class="navbar-left">
                 <li><a href="../hotels-stays/index.html">Hotels & Stays</a></li>
                 <li><a href="../attractions/index.html">Attractions</a></li>
-                <li><a href="../events/index.html">Events</a></li>
-                <li><a href="../travel-tips/index.html">Travel Tips</a></li>
+                <li><a href="index.html" class="active">Events</a></li>
             </ul>
             <a href="../index.html" class="navbar-brand">Taniti</a>
             <ul class="navbar-right">
+                <li><a href="../cuisine/index.html">Cuisine</a></li>
                 <li><a href="../about/index.html">About the Island</a></li>
-                <li><a href="../faq/index.html">FAQ</a></li>
+                <li><a href="../faq/index.html">Tips & FAQ</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="subpage-hero">
+    <section class="subpage-hero events-hero">
         <div class="subpage-hero-overlay"></div>
         <div class="subpage-hero-container">
-            <div class="subpage-hero-content-box">
+            <div class="subpage-hero-title">
                 <h1>Island Events</h1>
-                
+                <p>Experience Taniti's vibrant culture through our diverse events and celebrations</p>
+                <p>From traditional heritage festivals to live music and entertainment, there's always something happening on our island.</p>
+            </div>
+            <div class="subpage-hero-content-box">
                 <div class="info-carousel">
                     <div class="carousel-item active">
                         <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');"></div>

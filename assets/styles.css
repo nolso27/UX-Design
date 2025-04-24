@@ -54,11 +54,35 @@ body {
     height: 100vh; /* Changed from 60vh to 100vh to fill the entire viewport */
     width: 100%;
     position: relative;
-    background-image: url('../assets/tropical2.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 0; /* Remove margin-top to eliminate blank space */
     padding-top: 80px; /* Add padding-top instead to account for the navbar */
+}
+
+/* Adding background images for specific pages */
+.hotels-hero {
+    background-image: url('../assets/hotel1.jpg');
+}
+
+.about-hero {
+    background-image: url('../assets/about1.jpg');
+}
+
+.attractions-hero {
+    background-image: url('../assets/attractions1.jpg');
+}
+
+.events-hero {
+    background-image: url('../assets/events1.jpg');
+}
+
+.faq-hero {
+    background-image: url('../assets/faq1.jpg');
+}
+
+.cuisine-hero {
+    background-image: url('../assets/cuisine1.jpg');
 }
 
 .subpage-hero-overlay {
@@ -79,24 +103,21 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    justify-content: flex-end;
-    padding-right: 5%;
-    align-items: center; /* Center align vertically */
+    justify-content: space-between; /* Changed from flex-end to space-between */
+    align-items: center;
 }
 
+/* New styles for the hero title section on the left */
 .subpage-hero-title {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
+    width: 40%;
+    padding-left: 5%;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .subpage-hero-title h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     font-weight: 700;
@@ -104,9 +125,9 @@ body {
 
 .subpage-hero-title p {
     font-size: 1.2rem;
-    max-width: 80%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    max-width: 90%;
 }
 
 .subpage-hero-content {
@@ -126,23 +147,19 @@ body {
     padding: 2.5rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     color: #333;
-    width: 50%;
+    width: 40%; /* Reduced from 50% to balance with left title */
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align content */
+    align-items: center;
+    margin-right: 5%; /* Add right margin */
 }
 
-.subpage-hero-content-box h1,
+/* Remove h1 from content box as it's now in the title section */
 .subpage-hero-content-box p {
     color: #333;
     text-shadow: none;
-    width: 100%; /* Allow text to take full width */
-}
-
-.subpage-hero-content p {
-    margin-bottom: 2.5rem; /* Increased spacing between text and button */
-    text-align: center; /* Center align the text */
+    width: 100%;
 }
 
 .subpage-main-content {
@@ -222,6 +239,34 @@ nav {
     padding: 1.5rem 0;
     background-color: transparent;
     transition: top 0.4s ease; /* Add transition for top */
+    overflow: hidden; /* Contain the pseudo-element */
+}
+
+/* Create swipe-up effect with pseudo-element */
+nav:not(.scrolled):not(.unscrolled)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: white;
+    transition: height 0.3s ease;
+    z-index: -1;
+}
+
+/* Trigger the swipe-up on hover */
+nav:not(.scrolled):not(.unscrolled):hover::before {
+    height: 100%;
+}
+
+/* Change text color after hover animation */
+nav:not(.scrolled):not(.unscrolled):hover .navbar-left a,
+nav:not(.scrolled):not(.unscrolled):hover .navbar-right a,
+nav:not(.scrolled):not(.unscrolled):hover .navbar-brand {
+    color: #333;
+    text-shadow: none;
+    transition: color 0.3s ease 0.15s; /* Delay color change slightly */
 }
 
 nav.scrolled {
@@ -257,11 +302,6 @@ nav.unscrolled .navbar-brand {
     text-shadow: none;
 }
 
-/* Remove the hover background effect */
-.navbar:hover::before {
-    display: none;
-}
-
 .navbar-container {
     display: flex;
     align-items: center;
@@ -283,6 +323,7 @@ nav.unscrolled .navbar-brand {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    transition: color 0.3s ease;
 }
 
 .navbar-left {
@@ -320,6 +361,13 @@ nav.unscrolled .navbar-brand {
 .navbar-left a:hover, .navbar-right a:hover {
     color: var(--color-4);
     transform: scale(1.1);
+}
+
+/* Active nav link styling */
+.navbar-left a.active, .navbar-right a.active {
+    color: var(--color-4);
+    font-weight: 700;
+    text-shadow: none;
 }
 
 /* Call to action button */
@@ -685,7 +733,6 @@ nav.unscrolled .navbar-brand {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../assets/tropical2.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -851,6 +898,30 @@ nav.unscrolled .navbar-brand {
     .page-title-container,
     .page-content {
         flex: 1 0 100%;
+    }
+    
+    /* Adjust hero layout for tablets */
+    .subpage-hero-container {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    
+    .subpage-hero-title {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .subpage-hero-title p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .subpage-hero-content-box {
+        width: 90%;
+        margin-right: 0;
     }
 }
 

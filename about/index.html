@@ -7,64 +7,6 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="../assets/navbar.js" defer></script>
-    <style>
-        .subpage-hero {
-            background-image: url('../assets/about1.jpg');
-        }
-        
-        .subpage-hero-container {
-            justify-content: flex-end;
-            padding-right: 5%;
-        }
-        
-        .subpage-hero-content-box {
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 25px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            color: #333;
-            width: 50%;
-            margin-top: 2rem;
-            text-align: left;
-        }
-        
-        .subpage-hero-content-box h1,
-        .subpage-hero-content-box p {
-            color: #333;
-            text-shadow: none;
-        }
-
-        .info-carousel {
-            margin-top: 1.5rem;
-        }
-
-        .carousel-item {
-            display: none;
-        }
-
-        .carousel-item.active {
-            display: block;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            margin: 0 5px;
-            background-color: #ccc;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .carousel-dot.active {
-            background-color: #333;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -77,21 +19,23 @@
             </ul>
             <a href="../index.html" class="navbar-brand">Taniti</a>
             <ul class="navbar-right">
-                <li><a href="../about/index.html">About the Island</a></li>
+                <li><a href="../cuisine/index.html">Cuisine</a></li>
+                <li><a href="index.html" class="active">About the Island</a></li>
                 <li><a href="../faq/index.html">Tips & FAQ</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="subpage-hero">
+    <section class="subpage-hero about-hero">
         <div class="subpage-hero-overlay"></div>
         <div class="subpage-hero-container">
-            <div class="subpage-hero-content-box">
+            <div class="subpage-hero-title">
                 <h1>About Our Island</h1>
                 <p>Discover the natural beauty and culture of Taniti</p>
                 <p>A small tropical paradise in the Pacific with pristine beaches, lush rainforests, and a rich indigenous culture.</p>
-                
+            </div>
+            <div class="subpage-hero-content-box">
                 <div class="info-carousel">
                     <div class="carousel-item active">
                         <h3>Island Facts</h3>
@@ -161,37 +105,5 @@
             </div>
         </div>
     </section>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Carousel functionality for info cards
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            const carouselDots = document.querySelectorAll('.carousel-dot');
-            let currentIndex = 0;
-            
-            function showSlide(index) {
-                carouselItems.forEach(item => item.classList.remove('active'));
-                carouselDots.forEach(dot => dot.classList.remove('active'));
-                
-                carouselItems[index].classList.add('active');
-                carouselDots[index].classList.add('active');
-                currentIndex = index;
-            }
-            
-            // Automatic carousel rotation
-            setInterval(() => {
-                let nextIndex = (currentIndex + 1) % carouselItems.length;
-                showSlide(nextIndex);
-            }, 5000);
-            
-            // Click on dots to navigate
-            carouselDots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    let index = parseInt(dot.getAttribute('data-index'));
-                    showSlide(index);
-                });
-            });
-        });
-    </script>
 </body>
 </html>
