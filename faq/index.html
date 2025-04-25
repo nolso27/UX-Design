@@ -10,7 +10,6 @@
     <script src="../assets/carousel.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
             <ul class="navbar-left">
@@ -27,7 +26,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="subpage-hero faq-hero">
         <div class="subpage-hero-overlay"></div>
         <div class="subpage-hero-container">
@@ -62,7 +60,6 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <section id="content-section" class="subpage-main-content">
         <div class="container">
             <div class="tab-container">
@@ -70,7 +67,6 @@
                 <div class="tab" data-tab="faq">FAQs</div>
             </div>
             
-            <!-- Travel Tips Section -->
             <div id="travel-tips-content" class="content-section active">
                 <div class="content-block">
                     <h2 class="content-heading">Getting to Taniti</h2>
@@ -144,7 +140,6 @@
                 </div>
             </div>
 
-            <!-- FAQ Section -->
             <div id="faq-content" class="content-section">
                 <div class="content-block">
                     <h2 class="content-heading">General Information</h2>
@@ -297,7 +292,6 @@
         </div>
     </section>
 
-    <!-- Add Tab Functionality Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab');
@@ -305,16 +299,12 @@
             
             tabs.forEach(tab => {
                 tab.addEventListener('click', function() {
-                    // Remove active class from all tabs
                     tabs.forEach(t => t.classList.remove('active'));
                     
-                    // Add active class to clicked tab
                     this.classList.add('active');
                     
-                    // Hide all content sections
                     contentSections.forEach(section => section.classList.remove('active'));
                     
-                    // Show the selected content section
                     const targetId = this.getAttribute('data-tab') + '-content';
                     document.getElementById(targetId).classList.add('active');
                 });
